@@ -87,13 +87,13 @@ int yywrap( void ){
 
   switch(YY_START){
     case ST_COMMENT:
-        printf("error: unfinished comment starting at line %d\n", comm_beg);
+        printf("lexical error: unfinished comment starting at line %d\n", comm_beg);
         break;
     case ST_TAG:
-        printf("error: unfinished tag starting at line %d\n", tag_beg);
+        printf("lexical error: unfinished tag starting at line %d\n", tag_beg);
         break;
     case ST_PI:
-        printf("error: processing instruction starting at line %d\n", pi_beg);
+        printf("lexical error: processing instruction starting at line %d\n", pi_beg);
         break;
   }
 

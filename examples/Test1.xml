@@ -1,0 +1,15 @@
+<!-- Program testowy 1 -->
+<?xml version="1.0" encoding="utf-8"?>
+<?sthelse ?>
+<Root> <!-- element g��wny -->
+	<Elem1>A</Elem1> <!-- element 1 -->
+	<Elem2>
+	b
+	<Elem4/>
+	c
+	</Elem2> <!-- element 2 -->
+	<Elem3/>
+	<Elem6>
+		<Elem7>Jakis tekst przykladowy</Elem7>
+	</Elem6>
+</Root>
