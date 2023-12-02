@@ -19,6 +19,7 @@ int pos = 0;
 char current_word[MAX_STR_LEN] = { 0 };
 int current_word_len = 0;
 
+int first_word = 1;
 %}
 
 %union {
@@ -69,14 +70,18 @@ END_TAG: ETAG_BEG TAG_END {
 
 CONTENT: CONTENT CONTENT_ENTRY | /* empty */;
 
-CONTENT_ENTRY: '\n' | ELEMENT | S | WORD {
+CONTENT_ENTRY: '\n' 
+| ELEMENT {first_word = 1; }
+| S 
+| WORD {
 	current_word[current_word_len] = 0;
-	if(current_word_len + pos + 1 > LINE_WIDTH) {
+	if(first_word || current_word_len + pos + 1> LINE_WIDTH){
 		indent(level);
 	}
 	pos += current_word_len + 1;
 	strrev(current_word);
-	printf(" %s", current_word);
+	printf("%s ", current_word);
+	first_word = 0;
 	current_word_len = 0;
 };
 
@@ -133,11 +138,3 @@ void strrev(char* str){
         j--;
     }
 }
-
-// void guarded_printchar(char character){
-// 	if(pos > LINE_WIDTH){
-// 		indent(level);
-// 	}
-// 	printf("%c", pos);
-// }
-

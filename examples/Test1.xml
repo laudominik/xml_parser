@@ -4,12 +4,13 @@
 <Root> <!-- element g��wny -->
 	<Elem1>A</Elem1> <!-- element 1 -->
 	<Elem2>
-	b
-	<Elem4/>
-	c
+		b
+		<Elem4/>
+		potrzeba kamienia, potrzeba drewna, twoja popularność spada &quote;panie&quote;
 	</Elem2> <!-- element 2 -->
 	<Elem3/>
 	<Elem6>
-		<Elem7>Jakis tekst przykladowy</Elem7>
+		<Elem7>Jakis tekst przykladowy</Elem9>
+		<Elem8>Uwazam, ze 2d &lt; 3d </Elem8>
 	</Elem6>
 </Root>
